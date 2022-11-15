@@ -15,7 +15,7 @@ This a fork of [grafana play with mimir](https://grafana.com/tutorials/play-with
 
 * Grafana: http://localhost:9000
 * Mimir: http://localhost:9009 through 9016 for services (look in docker-compose.yml to see which routes to what)
-* Prometheus: http://localhost:9090
+* Prometheus: http://localhost:9091
 
 ### How to shutdown:
 
