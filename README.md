@@ -20,7 +20,8 @@ This a fork of [grafana play with mimir](https://grafana.com/tutorials/play-with
 ### How to shutdown:
 
 * Ctrl C to stop the compose
+
+### Useful cleanup commands (will destroy minio which holds existing data):
 * `docker images -q | xargs docker rmi`
 * `docker ps -qa | xargs docker rm`
 * `docker volume prune` 
-
