@@ -1,0 +1,28 @@
+common:
+  storage:
+    backend: s3
+    s3:
+      endpoint: minio:9000
+      access_key_id: mimir
+      secret_access_key: supersecret
+      insecure: true
+      bucket_name: mimir
+
+memberlist:
+  join_members: [ distributor-1,distributor-2,ingester-1,ingester-2,ingester-3,querier,store-gateway,compactor ]
+
+ingester:
+  ring:
+    kvstore:
+      store: memberlist
+
+distributor:
+  ring:
+    kvstore:
+      store: memberlist
+
+frontend_worker:
+  frontend_address: query-frontend:9095
+
+server:
+  log_level: warn
